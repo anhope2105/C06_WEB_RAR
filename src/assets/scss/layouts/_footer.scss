@@ -1,0 +1,130 @@
+.contact-box {
+  margin-top: 60px;
+  width: 600px;
+  height: 265px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  background: $white;
+  border-radius: 10px;
+  color: $black;
+  padding: 30px;
+
+  i {
+    color: rgba(247, 147, 29, 1);
+    font-size: 40px;
+  }
+  span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .info-address {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .info-tele {
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: 5%;
+    font-weight: 600;
+  }
+}
+
+#footer-contact {
+  background-image: image-set("/src/assets/images/bg-footer-info.png" 2x);
+}
+
+.footer-content {
+  height: 532px;
+  color: var(--whiteColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title-categories__main,
+  h3 {
+    color: #ffffff !important;
+  }
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+
+    .title-categories {
+      text-transform: uppercase;
+    }
+
+    .categories-center__title {
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 46px;
+      letter-spacing: 2%;
+    }
+
+    .categories-center__des {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .categories-center__btn--more {
+      background: var(--mainColor);
+      padding: 10px 3.125rem;
+      border-radius: 3.125rem;
+      color: var(--whiteColor);
+      margin-right: 20px;
+    }
+    .categories-center__btn--product {
+      padding: 10px 3.125rem;
+      border-radius: 3.125rem;
+      background-color: transparent;
+      border: 1px solid rgba(241, 241, 241, 1);
+    }
+    .categories-center__btn--product:hover {
+      background: var(--mainColor);
+    }
+  }
+}
+
+.footer-des {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 325px;
+  text-align: center;
+  .footer-des__title {
+    text-transform: uppercase;
+    color: rgba(247, 147, 29, 1);
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  .footer-des__nameweb {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 14px;
+    color: var(--yellowColor);
+    text-transform: uppercase;
+  }
+  .footer-note {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    strong {
+      font-style: italic;
+    }
+  }
+  .footer-copyright {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}

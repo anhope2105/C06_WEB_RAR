@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+  .navbar-nav .dropdown-menu {
+    position: relative !important;
+  }
+}
+
+@media (max-width: 1366px) {
+  .navbar {
+    padding: 0 40px !important;
+  }
+}
+header {
+  z-index: 2023;
+  background-color: $white;
+}

@@ -1,0 +1,18 @@
+:root {
+  --bgColor: #162052;
+  --whiteColor: #fff;
+  --grayColor: #bbb;
+  --blueColor: #689af8;
+  --blackColor: #000000;
+  --bgFooter: #001744;
+  --linkColor: #b3ceff;
+  --mainColor: linear-gradient(
+    to right,
+    rgba(255, 191, 68, 1),
+    rgba(247, 147, 29, 1)
+  );
+
+  --desColor: rgba(89, 90, 99, 1);
+
+  --yellowColor: rgba(255, 191, 68, 1);
+}
