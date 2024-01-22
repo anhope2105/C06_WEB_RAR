@@ -15950,7 +15950,7 @@ ul {
 }
 
 .card-subtitle {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .card {
@@ -15962,6 +15962,78 @@ ul {
 }
 .card-hover:hover {
   transform: translate3d(0px, -5px, 0px);
+}
+
+.form-group .input-label {
+  color: #060807;
+  font-weight: 400;
+  line-height: 13px;
+  margin-bottom: 0.5rem;
+}
+
+button .ti {
+  margin-right: 0.3rem;
+}
+
+.table-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.table {
+  border: 1px #EFEFF5;
+}
+
+.table .table-header {
+  background-color: #FAFAFA;
+}
+
+.table-header th:first-child {
+  padding-left: 18px !important;
+}
+
+.table-header th:last-child {
+  padding-right: 18px !important;
+}
+
+.table-header th {
+  padding: 13px !important;
+}
+
+.table-pagination {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-pagination p {
+  font-size: 14px;
+}
+
+.table-action {
+  width: 60px;
+}
+
+.col-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-action button {
+  border: 1px solid #E8E8E8 !important;
+}
+
+.dropdown-button {
+  padding: 4px 6px;
+}
+
+.dropdown-button i {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
 }
 
 .round-8 {
