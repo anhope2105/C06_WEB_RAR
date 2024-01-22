@@ -1,0 +1,52 @@
+.table-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.table {
+  border: 1px #EFEFF5;
+}
+
+.table .table-header {
+  background-color: #FAFAFA;
+}
+
+.table-header th:first-child {
+  padding-left: 18px!important;
+}
+
+.table-header th:last-child {
+  padding-right: 18px!important;
+}
+
+
+.table-header th {
+  padding: 13px!important;
+}
+
+.table-pagination {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-pagination p {
+  font-size: 14px;
+}
+
+.table-action {
+  width: 60px;
+}
+
+.col-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-action button {
+  border: 1px solid #E8E8E8!important;
+}
+

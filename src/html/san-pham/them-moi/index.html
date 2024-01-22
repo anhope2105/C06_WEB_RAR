@@ -9,9 +9,9 @@
       type="image/png"
       href="../assets/images/logos/favicon.png"
     />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-    <link rel="stylesheet" href="../assets/css/header.css" />
-    <link rel="stylesheet" href="../assets/css/body.css" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/header.css" />
+    <link rel="stylesheet" href="../../assets/css/body.css" />
   </head>
 
   <body>
@@ -233,103 +233,133 @@
             </div>
           </nav>
         </header>
-       <!--  Header End -->
-       <div class="content-main">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <h4 class="card-title fw-semibold mb-0">Quản lý sản phẩm</h4>
-              <button type="button" class="btn btn-success">
-                <i class="ti ti-plus"></i>
-                Thêm mới
-              </button>
-            </div>
-            <hr>
-            <div>
-              <form>
-                <div class="row">
-                  <div class="col-md-8 col-lg-4">
-                    <div class="form-group">
-                      <label class="input-label" for="productName">Tên sản phẩm</label>
-                      <input type="text" class="form-control" id="productName" placeholder="Tên sản phẩm">
+        <!--  Header End -->
+        <div class="content-main">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 class="card-title fw-semibold mb-0">Quản lý sản phẩm</h4>
+                <button type="button" class="btn btn-success">
+                  <i class="ti ti-plus"></i>
+                  Thêm mới
+                </button>
+              </div>
+              <hr />
+              <div>
+                <form>
+                  <div class="row">
+                    <div class="col-md-8 col-lg-4">
+                      <div class="form-group">
+                        <label class="input-label" for="productName"
+                          >Tên sản phẩm</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="productName"
+                          placeholder="Tên sản phẩm"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-lg-8 d-flex align-items-end">
+                      <button type="submit" class="btn btn-dark">
+                        <i class="ti ti-search"></i>
+                        Tìm kiếm
+                      </button>
                     </div>
                   </div>
-                  <div class="col-md-4 col-lg-8 d-flex align-items-end">
-                    <button type="submit" class="btn btn-dark">
-                      <i class="ti ti-search"></i>
-                      Tìm kiếm
-                    </button>
+                </form>
+              </div>
+              <hr />
+              <div class="container-fluid">
+                <div class="mb d-flex justify-content-between">
+                  <h5 class="table-title fw-semibold mb-0">
+                    Danh sách sản phẩm
+                  </h5>
+                  <div class="table-pagination">
+                    <p>Tổng số 40 bản ghi</p>
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
                 </div>
-              </form>
-            </div>
-            <hr>
-            <div class="container-fluid">
-              <div class="mb d-flex justify-content-between">
-                <h5 class="table-title fw-semibold mb-0">Danh sách sản phẩm</h5>
-                <div class="table-pagination">
-                  <p>Tổng số 40 bản ghi</p>
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                <div class="table-main">
+                  <table id="table" class="table table-bordered">
+                    <thead class="table-header">
+                      <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá bán</th>
+                        <th scope="col">Người tạo</th>
+                        <th scope="col">Ngày tạo</th>
+                        <th scope="col">Hiển thị trên website</th>
+                        <th scope="col" class="table-action"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-              </div>
-              <div>
-                <table class="table table-bordered">
-                  <thead class="table-header">
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
     </div>
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/sidebarmenu.js"></script>
-    <script src="../assets/js/app.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    
+    
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/sidebarmenu.js"></script>
+    <script src="../../assets/js/app.min.js"></script>
+    <script src="../../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="./pagination.js"></script>
   </body>
 </html>
