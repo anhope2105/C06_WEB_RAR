@@ -39,3 +39,19 @@
     border: 2px solid black;
   }
 }
+
+.w {
+  &-80 {
+    width: 80%;
+  }
+}
+
+.h {
+  &-80 {
+    height: 80%;
+  }
+}
+
+.ma {
+  margin: auto;
+}
