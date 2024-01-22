@@ -35,3 +35,8 @@
 .unHidden {
   display: block;
 }
+
+.btn-img{
+  width: 200px;
+  border: 1px dashed #000;
+}

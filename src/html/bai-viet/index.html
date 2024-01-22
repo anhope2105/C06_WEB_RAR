@@ -394,9 +394,17 @@
                   <label for="validationCustom01" class="form-label"
                     >Ảnh đại diện bài viết</label
                   >
-                  <button type="button" class="btn btn-outline-primary">
-                    Primary
-                  </button>
+                  <button type="button" class="btn btn-light btn-img"> 
+                    <i class="ti ti-plus"></i>
+                    Chọn ảnh</button>
+                    <input
+                    type="file"
+                    name=""
+                    accept=".jpg,.png,.jpeg,.docx,.doc,.pdf"
+                    id="phwqt_15_img"
+                    class="hidden"
+                    @change="handleFileChange"
+                  />
                 </form>
               </div>
             </div>
@@ -415,5 +423,6 @@
     <script src="/src/assets/js/bootstrap-table.min.js"></script>
     <script src="./rickText.js"></script>
     <script src="./pagination.js"></script>
+    <script src="./image.js"></script>
   </body>
 </html>
