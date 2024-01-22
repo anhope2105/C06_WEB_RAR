@@ -1,0 +1,41 @@
+.font {
+  &-bold {
+    font-weight: 700;
+  }
+}
+
+.indent {
+  &-3 {
+    text-indent: 0.75rem; /* 12px */
+  }
+  &-4 {
+    text-indent: 1rem; /* 14px */
+  }
+  &-5 {
+    text-indent: 1.25rem; /* 14px */
+  }
+}
+
+.c {
+  &-red {
+    color: #c60000;
+  }
+  &-black {
+    color: #060807;
+  }
+}
+
+.bd {
+  &-white {
+    background-color: #fff;
+  }
+}
+
+.border {
+  &-default {
+    border: 2px solid #d3cdcd;
+  }
+  &-black {
+    border: 2px solid black;
+  }
+}
