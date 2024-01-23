@@ -1,60 +1,3 @@
-// $(document).ready(function () {
-//   $(".btn-img").on("click", handleImage);
-
-//   const uploadedFile = {
-//     raw: null,
-//     name: "",
-//     size: 0,
-//     type: "",
-//     fileExtention: "",
-//     url: "",
-//     isUploaded: false,
-//   };
-
-//   function handleImage() {
-//     document.getElementById("phwqt_15_img").click();
-//   }
-
-//   // Đặt lắng nghe sự kiện change cho phần tử phwqt_15_img
-//   $("#phwqt_15_img").on("change", handleFileChange);
-
-//   function handleFileChange(e) {
-//     const filesList = e.target.files;
-//     console.log("filesList: ", filesList);
-//     if (filesList && filesList[0]) {
-//       const raw = filesList[0];
-
-//       const fileSize = Math.round((raw.size / 1024 / 1024) * 100) / 100;
-
-//       const fileExtention = raw.name.split(".").pop();
-
-//       const rawFileName = raw.name;
-//       console.log("base64", e.target?.result);
-//       console.log("rawFileName", rawFileName);
-//       const reader = new FileReader();
-//       reader.addEventListener(
-//         "load",
-//         (e) => {
-//           const base64 = e.target?.result;
-//           // Set file data
-//           uploadedFile = {
-//             raw,
-//             name: rawFileName,
-//             size: fileSize,
-//             type: raw.type,
-//             fileExtention: fileExtention,
-//             url: e.target?.result,
-//             isUploaded: true,
-//           };
-//           //   syncValue.value = base64.split(",").pop();
-//           //   syncFileName.value = rawFileName;
-//           sendDataToParent();
-//         },
-//         false
-//       );
-//     }
-//   }
-// });
 $(document).ready(function () {
   $(".btn-img").on("click", handleImage);
 
@@ -65,14 +8,25 @@ $(document).ready(function () {
     type: "",
     fileExtension: "",
     url: "",
-    isUploaded: false,
   };
+
+  let dataBase64 = "";
+  let isUploaded = false;
+
+  const updateUI = () => {
+    if (!isUploaded) {
+      $(".btn-img").show();
+      $(".btn-delete").hide();
+      $("#uploadedImage").attr("src", "/src/assets/images/no-image.png").show();
+    }
+  };
+
+  updateUI();
 
   function handleImage() {
     document.getElementById("phwqt_15_img").click();
   }
 
-  // Đặt lắng nghe sự kiện change cho phần tử phwqt_15_img
   $("#phwqt_15_img").on("change", handleFileChange);
 
   function handleFileChange(e) {
@@ -87,28 +41,39 @@ $(document).ready(function () {
       const reader = new FileReader();
 
       reader.addEventListener("load", (event) => {
-        const base64 = event.target.result;
-        // Set file data
+        dataBase64 = event.target.result;
         uploadedFile = {
           raw,
           name: rawFileName,
           size: fileSize,
           type: raw.type,
           fileExtension,
-          url: base64,
-          isUploaded: true,
+          url: dataBase64,
         };
         // Hiển thị ảnh
-        $("#uploadedImage").attr("src", base64).show();
-
-        // Hiển thị tên ảnh
-        $("#imageName")
-          .text(rawFileName)
-          .show();
+        if (dataBase64.length) {
+          isUploaded = true;
+          $(".btn-img").hide();
+          $(".btn-delete").show();
+          $("#uploadedImage").attr("src", dataBase64).show();
+          $("#imageName").text(rawFileName).show();
+        }
       });
-
-      // Bắt đầu đọc tệp như là URL dữ liệu
       reader.readAsDataURL(raw);
     }
   }
+
+  $.fn.deleteImage = function () {
+    dataBase64 = "";
+    console.log("dataBase64: ", dataBase64);
+    isUploaded = false;
+    updateUI();
+  };
+
+  $(".btn-delete").on("click", function () {
+    dataBase64 = "";
+    console.log("dataBase64: ", dataBase64);
+    isUploaded = false;
+    updateUI();
+  });
 });

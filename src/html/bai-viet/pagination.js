@@ -4,11 +4,12 @@ var $table = $("#table");
 var $remove = $("#remove");
 var selections = [];
 let listData = {};
+let currentModal = "";
 
-const setView  = (row) => {
-  if(row) return true
-  return false
-}
+const setView = (row) => {
+  if (row) return true;
+  return false;
+};
 
 $(document).ready(function () {
   $("table td").css("border", "none");
@@ -65,12 +66,13 @@ function operateFormatter(value, row, index) {
 window.operateEvents = {
   "click .detail": function (e, value, row, index) {
     console.log(row);
-    $("#home").addClass("hidden");
-    $("#detail").removeClass("hidden");
-    $("#detail").addClass("unHidden");
+    currentModal = "detail";
+    handleSelect(currentModal, row);
   },
   "click .edit": function (e, value, row, index) {
     console.log(row);
+    currentModal = "edit";
+    handleSelect(currentModal, row);
   },
   "click .remove": function (e, value, row, index) {
     console.log(row);
@@ -80,6 +82,43 @@ window.operateEvents = {
     });
   },
 };
+
+const addNew = () => {
+  currentModal = "new";
+  handleSelect(currentModal);
+};
+
+const handleSelect = (selectedOptionKey, row) => {
+  $("#home").addClass("hidden");
+  switch (selectedOptionKey) {
+    case "detail":
+      $("#detail").removeClass("hidden");
+      $("#detail").addClass("unHidden");
+      console.log(row);
+      break;
+    case "edit":
+      $("#detail").removeClass("unHidden");
+      $("#detail").addClass("hidden");
+      $("#new").removeClass("hidden");
+      $("#new").addClass("unHidden");
+      $("#tittle").text("Chỉnh sửa bài viết");
+      console.log(row);
+      break;
+    case "new":
+      $("#detail").removeClass("unHidden");
+      $("#detail").addClass("hidden");
+      $("#new").removeClass("hidden");
+      $("#new").addClass("unHidden");
+      $("#tittle").text("Thêm bài viết");
+      break;
+    default:
+      break;
+  }
+};
+
+// $(document).ready(function () {
+//   $("#tittle");
+// });
 
 function showStt(value, row, index) {
   return index + 1;

@@ -12,7 +12,7 @@
     text-indent: 1rem; /* 14px */
   }
   &-5 {
-    text-indent: 1.25rem; /* 14px */
+    text-indent: 1.25rem; /* 16px */
   }
 }
 
@@ -61,6 +61,16 @@
     width: 300px;
   }
   &-height {
-    height: 250px;
+    height: 350px;
   }
+}
+
+.btn-img {
+  width: 200px;
+  border: 1px dashed #000;
+}
+
+.btn-delete {
+  width: 200px;
+  border: 1px dashed #c60000;
 }
