@@ -55,3 +55,12 @@
 .ma {
   margin: auto;
 }
+
+.img {
+  &-width {
+    width: 300px;
+  }
+  &-height {
+    height: 250px;
+  }
+}

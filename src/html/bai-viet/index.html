@@ -363,9 +363,18 @@
               </div>
             </div>
           </div>
+          <!-- start: phần chi tiết -->
           <div class="card hidden" id="detail">
             <div class="card-body">
               <div class="w-80 ma pb-4">
+                <div class="d-flex flex-row mb-3">
+                  <button type="button" class="btn">
+                    <i class="ti ti-arrow-left"></i>
+                    <span id="btn-back-detail">Quay lại</span>
+                  </button>
+                  <div class="font-bold pt-2 ml-2">Xem chi tiết</div>
+                </div>
+                <hr />
                 <form class="row g-3 needs-validation" novalidate>
                   <label for="validationCustom01" class="form-label"
                     >Tiêu đề bài viết</label
@@ -388,28 +397,76 @@
                   <label for="validationCustom01" class="form-label"
                     >Nội dung bài viết</label
                   >
-                  <div id="editor">
-                    <p>Hello World!</p>
-                  </div>
+                  <div id="editor"></div>
                   <label for="validationCustom01" class="form-label"
                     >Ảnh đại diện bài viết</label
                   >
-                  <button type="button" class="btn btn-light btn-img"> 
-                    <i class="ti ti-plus"></i>
-                    Chọn ảnh</button>
-                    <input
-                    type="file"
-                    name=""
-                    accept=".jpg,.png,.jpeg,.docx,.doc,.pdf"
-                    id="phwqt_15_img"
-                    class="hidden"
-                    @change="handleFileChange"
-                  />
+                  <div class="dflex">
+                    <button type="button" class="btn btn-light btn-img mb-2">
+                      <i class="ti ti-plus"></i>
+                      Chọn ảnh
+                    </button>
+                    <div>
+                      <input
+                        type="file"
+                        name=""
+                        accept=".jpg,.png,.jpeg"
+                        id="phwqt_15_img"
+                        class="hidden"
+                        @change="handleFileChange" />
+                      <!-- Thẻ img để hiển thị ảnh -->
+                      <img
+                        id="uploadedImage"
+                        style="display: none"
+                        class="img-width img-height mb-2"
+                        alt="Selected Image" />
+                      <p id="imageName" style="display: none"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <label for="validationCustom01" class="form-label"
+                        >Thuộc chuyên mục</label
+                      >
+                      <select
+                        class="form-select form-select-lg mb-3"
+                        aria-label=".form-select-lg example">
+                        <option value="" disabled selected>Chọn</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                    <div class="col-1 col-md-2">
+                      <label for="validationCustom01" class="form-label"
+                        >Hiển thị ngoài trang chủ</label
+                      >
+                      <div class="form-check pt-2">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckDefault" />
+                        <label
+                          class="form-check-label c-black"
+                          for="flexCheckDefault">
+                          Hiển thị ngoài trang chủ
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-dark">
+                      Hủy bỏ
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
+        <!-- end: phần chi tiết -->
       </div>
     </div>
     <script src="/src/assets/js/jquery.min.js"></script>
@@ -424,5 +481,6 @@
     <script src="./rickText.js"></script>
     <script src="./pagination.js"></script>
     <script src="./image.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

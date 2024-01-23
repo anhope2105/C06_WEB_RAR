@@ -16730,4 +16730,55 @@ main {
   margin-top: 86.75px;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.indent-3 {
+  text-indent: 0.75rem; /* 12px */
+}
+.indent-4 {
+  text-indent: 1rem; /* 14px */
+}
+.indent-5 {
+  text-indent: 1.25rem; /* 14px */
+}
+
+.c-red {
+  color: #c60000;
+}
+.c-black {
+  color: #060807;
+}
+
+.bd-white {
+  background-color: #fff;
+}
+
+.border-default {
+  border: 2px solid #d3cdcd;
+}
+.border-black {
+  border: 2px solid black;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.ma {
+  margin: auto;
+}
+
+.img-width {
+  width: 300px;
+}
+.img-height {
+  height: 250px;
+}
+
 /*# sourceMappingURL=styles.css.map */
