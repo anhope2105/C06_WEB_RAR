@@ -243,33 +243,32 @@
                   <div class="row">
                     <div class="col-md-8 col-lg-3">
                       <div class="form-group">
-                        <label class="input-label" for="productName"
+                        <label class="input-label" for="chuyenMuc"
                           >Chuyên mục</label
                         >
                         <select
                           class="form-select form-select-lg mb-3"
-                          aria-label=".form-select-lg example">
-                          <option value="" disabled selected>Chọn</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
+                          id="chuyenMuc"
+                          aria-label=".form-select-lg example"></select>
                       </div>
                     </div>
                     <div class="col-md-8 col-lg-3">
                       <div class="form-group">
-                        <label class="input-label" for="productName"
+                        <label class="input-label" for="tenBaiViet"
                           >Tên bài viết</label
                         >
                         <input
                           type="text"
                           class="form-control"
-                          id="productName"
+                          id="tenBaiViet"
                           placeholder="Tên sản phẩm" />
                       </div>
                     </div>
                     <div class="col-md-4 col-lg-3 d-flex align-items-center">
-                      <button type="submit" class="btn btn-dark">
+                      <button
+                        type="submit"
+                        class="btn btn-dark"
+                        onclick="handlerSearch()">
                         <i class="ti ti-search"></i>
                         Tìm kiếm
                       </button>
@@ -377,37 +376,29 @@
                 <div class="font-bold pt-2 ml-2">Chi tiết bài viết</div>
               </div>
               <hr />
-              <form class="row g-3 needs-validation" novalidate>
-                <label for="validationCustom01" class="form-label"
-                  >Tiêu đề bài viết</label
-                >
+              <form class="row g-3" novalidate>
+                <label class="form-label">Tiêu đề bài viết</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="validationCustom01"
-                  value="Mark"
+                  id="detailTieuDe"
+                  value=""
                   disabled />
-                <label for="validationCustom01" class="form-label"
-                  >Mô tả ngắn</label
-                >
+                <label class="form-label">Mô tả ngắn</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="validationCustom01"
-                  value="Mark"
+                  id="detailMoTa"
+                  value=""
                   disabled />
-                <label for="validationCustom01" class="form-label"
-                  >Nội dung bài viết</label
-                >
+                <label class="form-label">Nội dung bài viết</label>
                 <textarea
                   class="form-control"
                   placeholder="Leave a comment here"
-                  id="floatingTextarea2"
+                  id="detailNoiDungBaiViet"
                   style="height: 100px"
                   disabled></textarea>
-                <label for="validationCustom01" class="form-label"
-                  >Ảnh đại diện bài viết</label
-                >
+                <label class="form-label">Ảnh đại diện bài viết</label>
                 <div class="dflex">
                   <img
                     id="detailImage"
@@ -417,9 +408,7 @@
                 </div>
                 <div class="row">
                   <div class="col-12 col-md-6">
-                    <label for="validationCustom01" class="form-label"
-                      >Thuộc chuyên mục</label
-                    >
+                    <label class="form-label">Thuộc chuyên mục</label>
                     <select
                       class="form-select form-select-lg mb-3"
                       aria-label=".form-select-lg example">
@@ -430,9 +419,7 @@
                     </select>
                   </div>
                   <div class="col-12 col-md-6">
-                    <label for="validationCustom01" class="form-label"
-                      >Hiển thị ngoài trang chủ</label
-                    >
+                    <label class="form-label">Hiển thị ngoài trang chủ</label>
                     <div class="form-check pt-2">
                       <input
                         class="form-check-input"
@@ -465,7 +452,11 @@
         <div class="card hidden" id="new">
           <div class="card-body">
             <div class="d-flex flex-row mb-3">
-              <button type="button" class="btn" onclick="goToBack('#new')">
+              <button
+                type="button"
+                class="btn"
+                id="goBack"
+                onclick="goToBack('#new')">
                 <i class="ti ti-arrow-left"></i>
                 <span>Quay lại</span>
               </button>
@@ -473,34 +464,51 @@
             </div>
             <hr />
             <form class="row g-3 needs-validation" novalidate>
-              <label for="tieuDe" class="form-label">Tiêu đề bài viết</label>
+              <label for="tieuDe" class="form-label"
+                ><span>Tiêu đề bài viết</span> <span class="c-red">*</span>
+              </label>
               <input
                 type="text"
                 class="form-control"
                 id="tieuDe"
-                :value="formContent.tieuDe" />
-              <label for="moTa" class="form-label">Mô tả ngắn</label>
+                :value="formContent.tieuDe"
+                required />
+              <div class="invalid-feedback c-red fw-bold">
+                Tiêu đề bài viết bắt buộc
+              </div>
+              <label for="moTa" class="form-label"
+                ><span>Mô tả ngắn</span><span class="c-red">*</span></label
+              >
               <input
                 type="text"
                 class="form-control"
                 id="moTa"
-                :value="formContent.moTa" />
-              <label class="form-label">Nội dung bài viết</label>
-              <div id="noiDungBaiViet"></div>
-              <label for="validationCustom01" class="form-label"
-                >Ảnh đại diện bài viết</label
+                :value="formContent.moTa"
+                required />
+              <div class="invalid-feedback c-red fw-bold">
+                Mô tả ngắn bắt buộc
+              </div>
+              <label class="form-label"
+                ><span>Nội dung bài viết</span
+                ><span class="c-red">*</span></label
+              >
+              <div id="noiDungBaiViet" required></div>
+              <div class="invalid-feedback c-red fw-bold">
+                Nội dung bài viết bắt buộc
+              </div>
+              <label class="form-label"
+                ><span>Ảnh đại diện bài viết</span
+                ><span class="c-red">*</span></label
               >
               <div class="dflex">
                 <button type="button" class="btn btn-light btn-img mb-2">
                   <i class="ti ti-plus"></i>
                   Chọn ảnh
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-light btn-delete mb-2">
+                <button type="button" class="btn btn-light btn-delete mb-2">
                   <div class="dflex">
                     <i class="ti ti-x c-red"></i>
-                   <span class="c-red"> Xóa ảnh</span>
+                    <span class="c-red"> Xóa ảnh</span>
                   </div>
                 </button>
                 <div>
@@ -510,40 +518,42 @@
                     accept=".jpg,.png,.jpeg"
                     id="phwqt_15_img"
                     class="hidden"
-                    @change="handleFileChange" />
+                    @change="handleFileChange"
+                    required />
                   <!-- Thẻ img để hiển thị ảnh -->
                   <img
                     id="uploadedImage"
                     style="display: none"
                     class="img-width img-height mb-2"
                     alt="Selected Image" />
+                  <div class="invalid-feedback c-red fw-bold">
+                    Ảnh đại diện bài viết bắt buộc
+                  </div>
                   <p id="imageName" style="display: none"></p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-6">
-                  <label for="validationCustom01" class="form-label"
-                    >Thuộc chuyên mục</label
+                  <label for="thuocCM" class="form-label"
+                    ><span>Thuộc chuyên mục</span
+                    ><span class="c-red">*</span></label
                   >
                   <select
                     class="form-select form-select-lg mb-3"
-                    aria-label=".form-select-lg example">
-                    <option value="" disabled selected>Chọn</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                    id="thuocCM"
+                    aria-label=".form-select-lg example"
+                    required></select>
                 </div>
                 <div class="col-12 col-md-6">
-                  <label for="validationCustom01" class="form-label"
+                  <label for="hienThiTrangChu" class="form-label"
                     >Hiển thị ngoài trang chủ</label
                   >
                   <div class="form-check pt-2">
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      value=""
-                      id="flexCheckDefault" />
+                      value="false"
+                      id="hienThiTrangChu" />
                     <label
                       class="form-check-label c-black"
                       for="flexCheckDefault">
@@ -566,10 +576,7 @@
                     Hiển thị ngoài trang chủ
                   </label>
                 </div>
-                <button
-                  type="button"
-                  class="btn btn-dark mx-2"
-                  onclick="handleSave()">
+                <button type="submit" class="btn btn-dark mx-2" id="handleSave">
                   Lưu thông tin
                 </button>
                 <button

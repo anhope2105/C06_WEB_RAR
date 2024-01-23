@@ -1,5 +1,3 @@
-// https://examples.bootstrap-table.com/index.html#methods/get-visible-hidden-columns.html#view-source
-
 var $table = $("#table");
 var $remove = $("#remove");
 var selections = [];
@@ -36,12 +34,6 @@ function detailFormatter(index, row) {
   return html.join("");
 }
 
-// function operateFormatter(value, row, index) {
-//   return [
-//     '<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical-rounded"></i></button>',
-//     '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item detail" href="#">Xem chi tiết</a><span class="dropdown-item edit" href="#">Sửa</span><span class="dropdown-item remove" href="#">Xóa</span></div>',
-//   ].join("");
-// }
 function operateFormatter(value, row, index) {
   return [
     '<div class="btn-group">',
@@ -92,23 +84,19 @@ const handleSelect = (selectedOptionKey, row) => {
   $("#home").addClass("hidden");
   switch (selectedOptionKey) {
     case "detail":
+      $("#new").addClass("hidden");
+      $("#new").removeClass("unHidden");
       $("#detail").removeClass("hidden");
       $("#detail").addClass("unHidden");
       console.log(row);
       break;
     case "edit":
-      $("#detail").removeClass("unHidden");
-      $("#detail").addClass("hidden");
-      $("#new").removeClass("hidden");
-      $("#new").addClass("unHidden");
+      toEditAndNew();
       $("#tittle").text("Chỉnh sửa bài viết");
       console.log(row);
       break;
     case "new":
-      $("#detail").removeClass("unHidden");
-      $("#detail").addClass("hidden");
-      $("#new").removeClass("hidden");
-      $("#new").addClass("unHidden");
+      toEditAndNew();
       $("#tittle").text("Thêm bài viết");
       break;
     default:
@@ -116,6 +104,12 @@ const handleSelect = (selectedOptionKey, row) => {
   }
 };
 
+const toEditAndNew = () => {
+  $("#detail").removeClass("unHidden");
+  $("#detail").addClass("hidden");
+  $("#new").removeClass("hidden");
+  $("#new").addClass("unHidden");
+};
 // $(document).ready(function () {
 //   $("#tittle");
 // });

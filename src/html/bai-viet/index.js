@@ -1,65 +1,42 @@
-const forms = document.querySelectorAll(".needs-validation");
-
-const formContent = {
-  tieuDe: "",
-  moTa: "",
-  noiDungBaiViet: "",
+const goToBack = (id) => {
+  $(id).addClass("hidden");
+  $(id).removeClass("unHidden");
+  $("#home").removeClass("hidden");
 };
 
-// Loop over them and prevent submission
-Array.from(forms).forEach((form) => {
-  form.addEventListener(
-    "submit",
-    (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
-      form.classList.add("was-validated");
-    },
-    false
-  );
-});
-
-var toolbarOptions = [
-  ["bold", "italic", "underline", "strike"], // toggled buttons
-  ["blockquote", "code-block"],
-
-  [{ header: 1 }, { header: 2 }], // custom button values
-  [{ list: "ordered" }, { list: "bullet" }],
-  [{ script: "sub" }, { script: "super" }], // superscript/subscript
-  [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-  [{ direction: "rtl" }], // text direction
-
-  [{ size: ["small", false, "large", "huge"] }], // custom dropdown
-  [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-  [{ font: [] }],
-  [{ align: [] }],
-
-  ["clean"], // remove formatting button
+const listChuyenMuc = [
+  {
+    value: 1,
+    lable: "ABC",
+  },
+  {
+    value: 2,
+    lable: "QWE",
+  },
 ];
 
-var quill = new Quill("#noiDungBaiViet", {
-  modules: {
-    toolbar: toolbarOptions,
-  },
-  theme: "snow",
-});
+document.getElementById("chuyenMuc").innerHTML = `
+ <option value="" disabled selected>Chọn</option>
+ ${listChuyenMuc.map(
+   (item) => `<option value="${item.value}">${item.lable}</option>`
+ )}
+ 
+`;
 
-const goToBack = (id) => {
-  $("#home").removeClass("hidden");
-  $(id).addClass("hidden");
-};
+document.getElementById("thuocCM").innerHTML = `
+ <option value="" disabled selected>Chọn</option>
+ ${listChuyenMuc.map(
+   (item) => `<option value="${item.value}">${item.lable}</option>`
+ )}
+ 
+`;
 
-const handleSave = () => {
-  // console.log($("#validationCustom01"));
-  const formContent = {
-    tieuDe: $("#tieuDe").val(),
-    moTa: $("#moTa").val(),
-    noiDungBaiViet: quill.getContents(),
+const handlerSearch = () => {
+  console.log("handlerSearch: ");
+  const params = {
+    chuyenMuc: $("#chuyenMuc").val(),
+    tenBaiViet: $("#tenBaiViet").val(),
   };
-  console.log("formContent: ", formContent);
+
+  console.log(params);
 };
