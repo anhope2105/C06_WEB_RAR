@@ -446,150 +446,153 @@
               </form>
             </div>
           </div>
-        </div>
-        <!-- end: phần chi tiết -->
-        <!-- start: phần thêm mới sửa -->
-        <div class="card hidden" id="new">
-          <div class="card-body">
-            <div class="d-flex flex-row mb-3">
-              <button
-                type="button"
-                class="btn"
-                id="goBack"
-                onclick="goToBack('#new')">
-                <i class="ti ti-arrow-left"></i>
-                <span>Quay lại</span>
-              </button>
-              <div class="font-bold pt-2 ml-2" id="tittle"></div>
-            </div>
-            <hr />
-            <form class="row g-3 needs-validation" novalidate>
-              <label for="tieuDe" class="form-label"
-                ><span>Tiêu đề bài viết</span> <span class="c-red">*</span>
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="tieuDe"
-                :value="formContent.tieuDe"
-                required />
-              <div class="invalid-feedback c-red fw-bold">
-                Tiêu đề bài viết bắt buộc
-              </div>
-              <label for="moTa" class="form-label"
-                ><span>Mô tả ngắn</span><span class="c-red">*</span></label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="moTa"
-                :value="formContent.moTa"
-                required />
-              <div class="invalid-feedback c-red fw-bold">
-                Mô tả ngắn bắt buộc
-              </div>
-              <label class="form-label"
-                ><span>Nội dung bài viết</span
-                ><span class="c-red">*</span></label
-              >
-              <div id="noiDungBaiViet" required></div>
-              <div class="invalid-feedback c-red fw-bold">
-                Nội dung bài viết bắt buộc
-              </div>
-              <label class="form-label"
-                ><span>Ảnh đại diện bài viết</span
-                ><span class="c-red">*</span></label
-              >
-              <div class="dflex">
-                <button type="button" class="btn btn-light btn-img mb-2">
-                  <i class="ti ti-plus"></i>
-                  Chọn ảnh
+          <!-- start: phần thêm mới sửa -->
+          <div class="card hidden" id="new">
+            <div class="card-body">
+              <div class="d-flex flex-row mb-3">
+                <button
+                  type="button"
+                  class="btn"
+                  id="goBack"
+                  onclick="goToBack('#new')">
+                  <i class="ti ti-arrow-left"></i>
+                  <span>Quay lại</span>
                 </button>
-                <button type="button" class="btn btn-light btn-delete mb-2">
-                  <div class="dflex">
-                    <i class="ti ti-x c-red"></i>
-                    <span class="c-red"> Xóa ảnh</span>
-                  </div>
-                </button>
-                <div>
-                  <input
-                    type="file"
-                    name=""
-                    accept=".jpg,.png,.jpeg"
-                    id="phwqt_15_img"
-                    class="hidden"
-                    @change="handleFileChange"
-                    required />
-                  <!-- Thẻ img để hiển thị ảnh -->
-                  <img
-                    id="uploadedImage"
-                    style="display: none"
-                    class="img-width img-height mb-2"
-                    alt="Selected Image" />
-                  <div class="invalid-feedback c-red fw-bold">
-                    Ảnh đại diện bài viết bắt buộc
-                  </div>
-                  <p id="imageName" style="display: none"></p>
-                </div>
+                <div class="font-bold pt-2 ml-2" id="tittle"></div>
               </div>
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <label for="thuocCM" class="form-label"
-                    ><span>Thuộc chuyên mục</span
-                    ><span class="c-red">*</span></label
-                  >
-                  <select
-                    class="form-select form-select-lg mb-3"
-                    id="thuocCM"
-                    aria-label=".form-select-lg example"
-                    required></select>
+              <hr />
+              <form class="row g-3 needs-validation" novalidate>
+                <label for="tieuDe" class="form-label"
+                  ><span>Tiêu đề bài viết</span> <span class="c-red">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tieuDe"
+                  :value="formContent.tieuDe"
+                  required />
+                <div class="invalid-feedback c-red fw-bold">
+                  Tiêu đề bài viết bắt buộc
                 </div>
-                <div class="col-12 col-md-6">
-                  <label for="hienThiTrangChu" class="form-label"
-                    >Hiển thị ngoài trang chủ</label
-                  >
-                  <div class="form-check pt-2">
+                <label for="moTa" class="form-label"
+                  ><span>Mô tả ngắn</span><span class="c-red">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="moTa"
+                  :value="formContent.moTa"
+                  required />
+                <div class="invalid-feedback c-red fw-bold">
+                  Mô tả ngắn bắt buộc
+                </div>
+                <label class="form-label"
+                  ><span>Nội dung bài viết</span
+                  ><span class="c-red">*</span></label
+                >
+                <div id="noiDungBaiViet" required></div>
+                <div class="invalid-feedback c-red fw-bold">
+                  Nội dung bài viết bắt buộc
+                </div>
+                <label class="form-label"
+                  ><span>Ảnh đại diện bài viết</span
+                  ><span class="c-red">*</span></label
+                >
+                <div class="dflex">
+                  <button type="button" class="btn btn-light btn-img mb-2">
+                    <i class="ti ti-plus"></i>
+                    Chọn ảnh
+                  </button>
+                  <button type="button" class="btn btn-light btn-delete mb-2">
+                    <div class="dflex">
+                      <i class="ti ti-x c-red"></i>
+                      <span class="c-red"> Xóa ảnh</span>
+                    </div>
+                  </button>
+                  <div>
+                    <input
+                      type="file"
+                      name=""
+                      accept=".jpg,.png,.jpeg"
+                      id="phwqt_15_img"
+                      class="hidden"
+                      @change="handleFileChange"
+                      required />
+                    <!-- Thẻ img để hiển thị ảnh -->
+                    <img
+                      id="uploadedImage"
+                      style="display: none"
+                      class="img-width img-height mb-2"
+                      alt="Selected Image" />
+                    <div class="invalid-feedback c-red fw-bold">
+                      Ảnh đại diện bài viết bắt buộc
+                    </div>
+                    <p id="imageName" style="display: none"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <label for="thuocCM" class="form-label"
+                      ><span>Thuộc chuyên mục</span
+                      ><span class="c-red">*</span></label
+                    >
+                    <select
+                      class="form-select form-select-lg mb-3"
+                      id="thuocCM"
+                      aria-label=".form-select-lg example"
+                      required></select>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="hienThiTrangChu" class="form-label"
+                      >Hiển thị ngoài trang chủ</label
+                    >
+                    <div class="form-check pt-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="false"
+                        id="hienThiTrangChu" />
+                      <label
+                        class="form-check-label c-black"
+                        for="flexCheckDefault">
+                        Hiển thị ngoài trang chủ
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-center">
+                  <div class="form-check pt-2 border-end px-2">
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      value="false"
-                      id="hienThiTrangChu" />
+                      value=""
+                      id="flexCheckDefault" />
                     <label
                       class="form-check-label c-black"
                       for="flexCheckDefault">
                       Hiển thị ngoài trang chủ
                     </label>
                   </div>
+                  <button
+                    type="submit"
+                    class="btn btn-dark mx-2"
+                    id="handleSave">
+                    Lưu thông tin
+                  </button>
+                  <button
+                    type="button"
+                    onclick="goToBack('#new')"
+                    class="btn btn-outline-dark">
+                    Hủy bỏ
+                  </button>
                 </div>
-              </div>
-              <hr />
-              <div class="d-flex justify-content-center">
-                <div class="form-check pt-2 border-end px-2">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault" />
-                  <label
-                    class="form-check-label c-black"
-                    for="flexCheckDefault">
-                    Hiển thị ngoài trang chủ
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-dark mx-2" id="handleSave">
-                  Lưu thông tin
-                </button>
-                <button
-                  type="button"
-                  onclick="goToBack('#new')"
-                  class="btn btn-outline-dark">
-                  Hủy bỏ
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+          <!-- end: phần thêm mới sửa -->
         </div>
-        <!-- end: phần thêm mới sửa -->
+        <!-- end: phần chi tiết -->
       </div>
     </div>
     <script src="/src/assets/js/jquery.min.js"></script>
